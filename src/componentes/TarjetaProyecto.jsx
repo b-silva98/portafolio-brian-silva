@@ -1,33 +1,57 @@
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import "./TarjetaProyecto.css";
 
-export default function TarjetaProyecto({ titulo, descripcion, imagen, tecnologias, enlaceGitHub, enlaceDemo }) {
+export default function TarjetaProyecto({
+  titulo,
+  descripcion,
+  imagen,
+  tecnologias,
+  enlaceGitHub,
+  enlaceDemo,
+  animationDelay
+}) {
   return (
-    <div className="col-md-6 col-lg-4 mb-4">
-      <div className="card h-100 shadow-sm">
-        <img src={imagen} className="card-img-top" alt={`Captura del proyecto ${titulo}`} />
-
-        <div className="card-body d-flex flex-column">
-          <h5 className="card-title">{titulo}</h5>
-          <p className="card-text">{descripcion}</p>
-
-          <div className="mb-2">
-            {tecnologias.map((tec, index) => (
-              <span key={index} className="badge bg-secondary me-1">{tec}</span>
-            ))}
-          </div>
-
-          <div className="mt-auto d-flex gap-3">
-            {enlaceGitHub && (
-              <a href={enlaceGitHub} target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark btn-sm">
-                <FaGithub /> Código
-              </a>
-            )}
-            {enlaceDemo && (
-              <a href={enlaceDemo} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">
-                <FaExternalLinkAlt /> Ver demo
-              </a>
-            )}
-          </div>
+    <div 
+      className="project-card"
+      style={{ animationDelay: `${animationDelay}s` }}
+    >
+      <div className="card-image-container">
+        <img src={imagen} alt={titulo} className="card-image" />
+        <div className="image-overlay"></div>
+      </div>
+      
+      <div className="card-content">
+        <h3 className="card-title">{titulo}</h3>
+        <p className="card-description">{descripcion}</p>
+        
+        <div className="technologies-container">
+          {tecnologias.map((tech, index) => (
+            <span key={index} className="technology-tag">{tech}</span>
+          ))}
+        </div>
+        
+        <div className="card-actions">
+          {enlaceGitHub && (
+            <a
+              href={enlaceGitHub}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-button github-button"
+            >
+              <FaGithub /> Código
+            </a>
+          )}
+          
+          {enlaceDemo && (
+            <a
+              href={enlaceDemo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-button demo-button"
+            >
+              <FaExternalLinkAlt /> Demo
+            </a>
+          )}
         </div>
       </div>
     </div>

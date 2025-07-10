@@ -1,11 +1,11 @@
-// src/componentes/Encabezado.jsx
 import { Link } from "react-router-dom";
+import "./Encabezado.css"; // Asegúrate de crear este archivo CSS
 
 export default function Encabezado() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <nav className="navbar navbar-expand-lg navbar-light sticky-top shadow-sm navbar-custom">
       <div className="container">
-        <Link className="navbar-brand fw-bold text-primary" to="/">
+        <Link className="navbar-brand fw-bold" to="/">
           Brian Silva
         </Link>
 
@@ -14,6 +14,7 @@ export default function Encabezado() {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#menuNavegacion"
+          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>

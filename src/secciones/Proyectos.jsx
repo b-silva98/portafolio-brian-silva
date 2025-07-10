@@ -1,5 +1,6 @@
 import TarjetaProyecto from "../componentes/TarjetaProyecto";
-import imagenEjemplo from "../assets/proyecto-ejemplo.png.jfif"; // Cambiar por tus imágenes reales
+import imagenEjemplo from "../assets/proyecto-ejemplo.png.jfif";
+import "./Proyectos.css";
 
 export default function Proyectos() {
   const listaProyectos = [
@@ -19,16 +20,26 @@ export default function Proyectos() {
       enlaceGitHub: "",
       enlaceDemo: ""
     }
-    // Podés seguir agregando más proyectos aquí...
+    // Agrega más proyectos aquí...
   ];
 
   return (
-    <section className="container py-5">
-      <h2 className="mb-4 text-center text-primary">Mis Proyectos</h2>
-      <div className="row">
-        {listaProyectos.map((proyecto, index) => (
-          <TarjetaProyecto key={index} {...proyecto} />
-        ))}
+    <section className="projects-section">
+      <div className="container">
+        <h2 className="section-title">Mis Proyectos</h2>
+        <p className="section-subtitle">
+          Algunos de mis trabajos recientes que combinan tecnología y agronomía
+        </p>
+        
+        <div className="projects-grid">
+          {listaProyectos.map((proyecto, index) => (
+            <TarjetaProyecto 
+              key={index} 
+              {...proyecto} 
+              animationDelay={index * 0.2}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

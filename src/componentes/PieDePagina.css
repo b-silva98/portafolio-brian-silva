@@ -1,0 +1,67 @@
+/* Estilos base del footer */
+.footer-custom {
+  background-color: #298712; /* Un tono más oscuro para el footer */
+  color: #ffffff;
+  transition: all 0.3s ease;
+  border-top: 1px solid #137500; /* Borde superior más oscuro */
+}
+
+/* Texto del footer */
+.footer-text {
+  color: #d4ffc8; /* Un verde muy claro para el texto */
+  font-size: 0.9rem;
+  margin-bottom: 1rem !important;
+}
+
+/* Contenedor de iconos sociales */
+.social-icons {
+  margin-top: 0.5rem;
+}
+
+/* Estilos para los iconos */
+.social-icons a {
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Efectos hover para los iconos */
+.social-icons a:hover {
+  color: #3e9a24;
+  background-color: #ffffff;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto específico para cada icono */
+.social-icons a:nth-child(1):hover { /* GitHub */
+  color: #69be48;
+}
+
+.social-icons a:nth-child(2):hover { /* LinkedIn */
+  color: #54ac36;
+}
+
+.social-icons a:nth-child(3):hover { /* Email */
+  color: #3e9a24;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .footer-text {
+    font-size: 0.8rem;
+  }
+  
+  .social-icons {
+    gap: 1.5rem !important;
+    font-size: 1.2rem;
+  }
+}

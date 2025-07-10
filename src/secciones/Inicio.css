@@ -1,0 +1,172 @@
+/* Estilos base */
+.inicio-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.inicio-content {
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Efecto de fondo decorativo */
+.inicio-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(105, 190, 72, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: 0;
+}
+
+/* Textos */
+.inicio-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #298712;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.inicio-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #69be48;
+}
+
+.inicio-subtitle {
+  font-size: 1.3rem;
+  color: #3e9a24;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.inicio-description {
+  font-size: 1.1rem;
+  color: #495057;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Botones */
+.inicio-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-cv, .btn-projects {
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-cv {
+  background-color: #3e9a24;
+  color: white;
+  border: 2px solid #3e9a24;
+}
+
+.btn-cv:hover {
+  background-color: #298712;
+  border-color: #298712;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(62, 154, 36, 0.3);
+}
+
+.btn-projects {
+  background-color: transparent;
+  color: #3e9a24;
+  border: 2px solid #3e9a24;
+}
+
+.btn-projects:hover {
+  background-color: rgba(62, 154, 36, 0.1);
+  color: #298712;
+  border-color: #298712;
+  transform: translateY(-3px);
+}
+
+/* Efectos de animación */
+.inicio-title {
+  animation: fadeInDown 0.8s ease;
+}
+
+.inicio-subtitle {
+  animation: fadeIn 1s ease 0.3s both;
+}
+
+.inicio-description {
+  animation: fadeIn 1s ease 0.6s both;
+}
+
+.inicio-buttons {
+  animation: fadeInUp 0.8s ease 0.9s both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from { 
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .inicio-title {
+    font-size: 2rem;
+  }
+  
+  .inicio-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .inicio-description {
+    font-size: 1rem;
+  }
+  
+  .btn-cv, .btn-projects {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

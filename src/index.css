@@ -1,4 +1,11 @@
 /* Asegura que el scroll sea suave */
+:root {
+  --verde-primario: #3e9a24;
+  --verde-claro: #69be48;
+  --verde-oscuro: #298712;
+  --texto-blanco: #ffffff;
+}
+
 html {
   scroll-behavior: smooth;
 }
