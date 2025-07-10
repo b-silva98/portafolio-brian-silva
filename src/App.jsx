@@ -6,6 +6,7 @@ import PieDePagina from "./componentes/PieDePagina";
 
 // Secciones del portafolio
 import Inicio from "./secciones/Inicio";
+import Proyectos from "./secciones/Proyectos";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <main className="mt-5 pt-4">
         <Routes>
           <Route path="/" element={<Inicio />} />
+           <Route path="/proyectos" element={<Proyectos />} />
         </Routes>
       </main>
 
